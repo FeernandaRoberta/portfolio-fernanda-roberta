@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contato</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header id="header">
+    <div id="logo">
+      <h1>Fernanda Roberta</h1>
+    </div>
+    <nav id="menu">
+      <a href="index.html">Sobre Mim</a>
+      <a href="formacao.html">Formação</a>
+      <a href="portifolio.html">Portfólio</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main id="contato">
+    <h2>Entre em <span>Contato</span></h2>
+
+    <form action="#" method="post" class="formulario-contato">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+
+      <label for="mensagem">Mensagem</label>
+      <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem" rows="5" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+  <footer id="footer">
+    © 2024 Fernanda Roberta Alves - Todos os direitos reservados.
+  </footer>
+
+  <script>
+  // Espera o carregamento da página
+  window.onload = function() {
+    const form = document.querySelector('.formulario-contato');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Evita envio real do formulário
+
+      // Pega os valores dos campos
+      let nome = document.getElementById('nome').value;
+      let email = document.getElementById('email').value;
+      let mensagem = document.getElementById('mensagem').value;
+
+      // Verifica se todos os campos estão preenchidos
+      if (nome === '' || email === '' || mensagem === '') {
+        alert('Por favor, preencha todos os campos.');
+        return;
+      }
+
+      // Se tudo estiver certo, exibe mensagem
+      alert('Obrigado, ' + nome + '! Sua mensagem foi enviada com sucesso.');
+      
+      // Opcional: limpa os campos
+      form.reset();
+    });
+  };
+</script>
+
+</body>
+</html>
